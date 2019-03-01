@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void update(int *a,int *b) {
+    *a = *a + *b;                   /* updates pointer a with the sum of both integers */
+    *b = abs(*a - (2*(*b)));        /* Updates pointer b with the absolute difference between both integers
+                                       As you can see I have subtracted b twice because pointer a has been updated already */ 
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
